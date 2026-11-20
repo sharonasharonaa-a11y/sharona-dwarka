@@ -491,6 +491,14 @@ main section.view{padding-block:4.5rem 6rem}
 .faq-item[open] summary::after{transform:rotate(-135deg); margin-top:-2px}
 .faq-item p{margin:0 0 1.15rem; color:var(--muted); max-width:62ch}
 @media (prefers-reduced-motion: reduce){ .faq-item summary::after{transition:none} }
+
+.freebie form.guide{display:grid; grid-template-columns:1fr 1fr; gap:.8rem; margin-top:.6rem; align-items:end}
+.freebie form.guide .status{grid-column:1/-1; min-height:0; margin:0}
+.freebie form.guide .status:empty{display:none}
+.freebie form.guide .status a{color:var(--accent); text-decoration:underline}
+.freebie form.guide > .btn{grid-column:1/-1; justify-self:start}
+.freebie form.guide.done .field, .freebie form.guide.done > .btn{display:none}
+@media (max-width:560px){ .freebie form.guide{grid-template-columns:1fr} }
 </style>
 </head>
 <body>
@@ -613,8 +621,24 @@ main section.view{padding-block:4.5rem 6rem}
       email.focus();
       return;
     }
-    status.textContent = 'Thanks. Your download is starting, and a confirmation email is on its way.';
-    setTimeout(downloadFreebie, 250);
+    e.preventDefault();
+    var btn = f.querySelector('button[type=submit]'); btn.disabled = true;
+    var done = function(ok){
+      status.innerHTML = ok
+        ? 'Thanks. Your download is starting. If nothing happens, <a href="' + FREEBIE_FILE + '" download>download the worksheet here</a>.'
+        : 'Your download is starting, but I could not add you to my list. Email info@sharonadwarka.com and I will add you. <a href="' + FREEBIE_FILE + '" download>Download the worksheet</a>.';
+      f.classList.add('done'); btn.disabled = false;
+      setTimeout(downloadFreebie, 250);
+    };
+    fetch(f.action + '?isAjax=1', {method:'POST', body:new FormData(f)})
+      .then(function(r){ return r.json().catch(function(){ return {}; }); })
+      .then(function(j){ if(window.console) console.log('brevo', j); done(j.success !== false); })
+      .catch(function(err){
+        // response unreadable (cross-origin): send once more blind so the signup still arrives
+        if(window.console) console.log('brevo-fallback', err);
+        fetch(f.action + '?isAjax=1', {method:'POST', mode:'no-cors', body:new FormData(f)}).catch(function(){});
+        done(true);
+      });
   });
   function downloadFreebie(){
     var a = document.createElement('a');
