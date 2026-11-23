@@ -263,7 +263,7 @@ main section.view[data-view="home"]{padding-top:0}
 /* services */
 .svc-group{display:flex; flex-direction:column; gap:1.25rem}
 .svc-group > h3{font-family:var(--display); font-weight:400; font-size:var(--step-3)}
-.pkg{background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:2rem; display:grid; grid-template-columns:minmax(0,15rem) minmax(0,1fr); gap:1.5rem 2.5rem}
+.pkg{scroll-margin-top:6.5rem; background:var(--surface); border:1px solid var(--line); border-radius:18px; padding:2rem; display:grid; grid-template-columns:minmax(0,15rem) minmax(0,1fr); gap:1.5rem 2.5rem}
 .pkg .side{display:flex; flex-direction:column; gap:.4rem}
 .pkg .side h4{font-family:var(--display); font-weight:400; font-size:var(--step-2); margin:0; line-height:1.15}
 .pkg .price{font-weight:700; color:var(--accent); font-variant-numeric:tabular-nums}
@@ -532,12 +532,12 @@ main section.view{padding-block:4.5rem 6rem}
     <div class="page-head">
       <span class="label">What I offer</span>
       <h1 class="display">Services &amp; Packages</h1>
-      <p class="intro">I help clients build and keep up their brand through branding, copywriting, storytelling, communication, outreach and creative strategy. I work in both English and Dutch.</p>
+      <p class="intro">I work for people and businesses that want to make the world a little better in their own unique way. Think: healthcare practices, therapists, coaches, yoga companies, wellness retreats, rehab facilities, funeral services, and creatives. My clients help or inspire others through what they do. I help them build and sustain their brands through branding, copywriting, storytelling, communications, outreach, and creative strategy.</p>
     </div>
 
     <div class="block svc-group">
       <h3>Helping you find your voice</h3>
-      <article class="pkg">
+      <article class="pkg" id="founder-story-positioning">
         <div class="side"><h4>Founder Story &amp; Positioning</h4><span class="price">From 2,200</span><span class="time">Timeline: 4 to 8 weeks</span></div>
         <div class="body">
           <h5>Where you might be</h5>
@@ -560,7 +560,7 @@ main section.view{padding-block:4.5rem 6rem}
 
     <div class="block svc-group">
       <h3>Helping you use your voice</h3>
-      <article class="pkg">
+      <article class="pkg" id="human-rewrite">
         <div class="side"><h4>Human Rewrite</h4><span class="price">From 1,150</span><span class="time">Timeline: 1 to 4 weeks</span></div>
         <div class="body">
           <h5>Where you might be</h5>
@@ -577,7 +577,7 @@ main section.view{padding-block:4.5rem 6rem}
           <div><a class="btn ghost" href="contact.html"><span class="draft">Ask about this package</span></a></div>
         </div>
       </article>
-      <article class="pkg">
+      <article class="pkg" id="brand-snapshot">
         <div class="side"><h4>Brand Snapshot</h4><span class="price">From 750</span><span class="time">Timeline: 1 to 3 weeks</span></div>
         <div class="body">
           <h5>Where you might be</h5>
@@ -587,19 +587,30 @@ main section.view{padding-block:4.5rem 6rem}
           <div><a class="btn ghost" href="contact.html"><span class="draft">Ask about this package</span></a></div>
         </div>
       </article>
-      <article class="pkg">
+      <article class="pkg" id="website-snapshot">
         <div class="side"><h4>Website Snapshot</h4><span class="price">From 250</span><span class="time">Timeline: 1 to 3 weeks</span></div>
         <div class="body">
-          <p>You already have a website, socials or other ways of communication up, but you want a refresher</p>
+          <h5>Where you might be</h5>
+          <p>You already have a website, socials or other ways of communication up, but you want a refresher.</p>
           <p class="outcome"><strong>Outcome:</strong> Audit of your website, social profiles, or other material that you can use as a brief for yourself, a designer, or a writer, and a clear view of what to do first.</p>
           <div><a class="btn ghost" href="contact.html"><span class="draft">Ask about this package</span></a></div>
         </div>
       </article>
-      <article class="pkg">
+      <article class="pkg" id="cold-outreach">
         <div class="side"><h4>Cold outreach package</h4><span class="price">From 600</span><span class="time">Timeline: 1 to 3 weeks</span></div>
         <div class="body">
-          <p>You need partners or new clients, but you don't know what to say, and every message starts from scratch.</p>
-          <p class="outcome"><strong>Outcome:</strong> Research on 30 prospects that fit your work, each with a personalised first email, ready to send from your own address.</p>
+          <h5>Where you might be</h5>
+          <p>You have an offer or service and need partners or new clients, but you don't know what to say or how to say it. Every message starts from scratch, takes a lot of time, and outreach is slow.</p>
+          <h5>What's included</h5>
+          <ul>
+            <li>45-minute introductory meeting about who you want to reach and why</li>
+            <li>Prospect checklist based on meeting</li>
+            <li>Research on 30 prospects that fit your work, screened against the checklist, with direct email addresses only</li>
+            <li>A personalised first email for each prospect, written based on what I can find about them and what your service can do for them</li>
+            <li>Delivered as drafts for you to review and send from your own address</li>
+            <li>Short guide on timing, follow-ups, and tracking replies</li>
+          </ul>
+          <p class="outcome"><strong>Outcome:</strong> A list of 30 prospects and ready-to-send cold outreach messages.</p>
           <div><a class="btn ghost" href="contact.html"><span class="draft">Ask about this package</span></a></div>
         </div>
       </article>
