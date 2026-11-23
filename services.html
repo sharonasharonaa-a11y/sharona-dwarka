@@ -483,6 +483,13 @@ main section.view{padding-block:4.5rem 6rem}
 }
 </style>
 <style>
+.pkg-pair{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; align-items:stretch}
+.pkg-sm{grid-template-columns:minmax(0,1fr); grid-template-rows:auto 1fr; gap:1rem; padding:1.5rem}
+.pkg-sm .side{gap:.3rem}
+.pkg-sm .side h4{font-size:var(--step-1)}
+.pkg-sm .body{flex:1}
+.pkg-sm .body > div:last-child{margin-top:auto}
+@media (max-width:760px){ .pkg-pair{grid-template-columns:minmax(0,1fr)} }
 .faq{display:flex; flex-direction:column; gap:0; margin-top:1.2rem; border-top:1px solid var(--line)}
 .faq-item{border-bottom:1px solid var(--line)}
 .faq-item summary{cursor:pointer; list-style:none; padding:1.05rem 2rem 1.05rem 0; font-weight:600; font-size:1.02rem; position:relative}
@@ -500,6 +507,7 @@ main section.view{padding-block:4.5rem 6rem}
 .freebie form.guide.done .field, .freebie form.guide.done > .btn{display:none}
 @media (max-width:560px){ .freebie form.guide{grid-template-columns:1fr} }
 </style>
+
 </head>
 <body>
 <header class="site-head">
@@ -577,24 +585,6 @@ main section.view{padding-block:4.5rem 6rem}
           <div><a class="btn ghost" href="contact.html"><span class="draft">Ask about this package</span></a></div>
         </div>
       </article>
-      <article class="pkg" id="brand-snapshot">
-        <div class="side"><h4>Brand Snapshot</h4><span class="price">From 750</span><span class="time">Timeline: 1 to 3 weeks</span></div>
-        <div class="body">
-          <h5>Where you might be</h5>
-          <p>You want to see where you stand before investing in a larger project. You know your work matters, but you haven't put it into words yet, or you can't tell which part of your brand needs attention first.</p>
-          <p class="outcome"><strong>Outcome:</strong> 60-minute online discovery session about your work, your clients, and your goals, resulting in a one-page brand summary: who you help, what you offer, what sets you apart, three key messages, and notes on tone of voice</p>
-          <p>Add-on: Website Snapshot 200</p>
-          <div><a class="btn ghost" href="contact.html"><span class="draft">Ask about this package</span></a></div>
-        </div>
-      </article>
-      <article class="pkg" id="website-snapshot">
-        <div class="side"><h4>Website Snapshot</h4><span class="price">From 250</span><span class="time">Timeline: 1 to 3 weeks</span></div>
-        <div class="body">
-          <p>You already have a website, socials or other ways of communication up, but you want a refresher.</p>
-          <p class="outcome"><strong>Outcome:</strong> Audit of your website, social profiles, or other material that you can use as a brief for yourself, a designer, or a writer, and a clear view of what to do first.</p>
-          <div><a class="btn ghost" href="contact.html"><span class="draft">Ask about this package</span></a></div>
-        </div>
-      </article>
       <article class="pkg" id="cold-outreach">
         <div class="side"><h4>Cold outreach package</h4><span class="price">From 600</span><span class="time">Timeline: 1 to 3 weeks</span></div>
         <div class="body">
@@ -614,6 +604,31 @@ main section.view{padding-block:4.5rem 6rem}
         </div>
       </article>
     </div>
+
+    <div class="block svc-group">
+      <h3>Smaller starting points</h3>
+      <div class="pkg-pair">
+      <article class="pkg pkg-sm" id="brand-snapshot">
+        <div class="side"><h4>Brand Snapshot</h4><span class="price">From 750</span><span class="time">Timeline: 1 to 3 weeks</span></div>
+        <div class="body">
+          <h5>Where you might be</h5>
+          <p>You want to see where you stand before investing in a larger project. You know your work matters, but you haven't put it into words yet, or you can't tell which part of your brand needs attention first.</p>
+          <p class="outcome"><strong>Outcome:</strong> 60-minute online discovery session about your work, your clients, and your goals, resulting in a one-page brand summary: who you help, what you offer, what sets you apart, three key messages, and notes on tone of voice</p>
+          <p>Add-on: Website Snapshot 200</p>
+          <div><a class="btn ghost" href="contact.html"><span class="draft">Ask about this package</span></a></div>
+        </div>
+      </article>
+      <article class="pkg pkg-sm" id="website-snapshot">
+        <div class="side"><h4>Website Snapshot</h4><span class="price">From 250</span><span class="time">Timeline: 1 to 3 weeks</span></div>
+        <div class="body">
+          <p>You already have a website, socials or other ways of communication up, but you want a refresher.</p>
+          <p class="outcome"><strong>Outcome:</strong> Audit of your website, social profiles, or other material that you can use as a brief for yourself, a designer, or a writer, and a clear view of what to do first.</p>
+          <div><a class="btn ghost" href="contact.html"><span class="draft">Ask about this package</span></a></div>
+        </div>
+      </article>
+      </div>
+    </div>
+
     <div class="block">
       <span class="label">Questions</span>
       <h2 class="display sm">Frequently asked</h2>

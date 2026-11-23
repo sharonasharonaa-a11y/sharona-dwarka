@@ -483,6 +483,13 @@ main section.view{padding-block:4.5rem 6rem}
 }
 </style>
 <style>
+.pkg-pair{display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; align-items:stretch}
+.pkg-sm{grid-template-columns:minmax(0,1fr); grid-template-rows:auto 1fr; gap:1rem; padding:1.5rem}
+.pkg-sm .side{gap:.3rem}
+.pkg-sm .side h4{font-size:var(--step-1)}
+.pkg-sm .body{flex:1}
+.pkg-sm .body > div:last-child{margin-top:auto}
+@media (max-width:760px){ .pkg-pair{grid-template-columns:minmax(0,1fr)} }
 .faq{display:flex; flex-direction:column; gap:0; margin-top:1.2rem; border-top:1px solid var(--line)}
 .faq-item{border-bottom:1px solid var(--line)}
 .faq-item summary{cursor:pointer; list-style:none; padding:1.05rem 2rem 1.05rem 0; font-weight:600; font-size:1.02rem; position:relative}
@@ -500,6 +507,7 @@ main section.view{padding-block:4.5rem 6rem}
 .freebie form.guide.done .field, .freebie form.guide.done > .btn{display:none}
 @media (max-width:560px){ .freebie form.guide{grid-template-columns:1fr} }
 </style>
+
 </head>
 <body>
 <header class="site-head">
